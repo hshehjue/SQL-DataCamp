@@ -91,7 +91,8 @@ While takin this process, you can make a subquery in FROM clause. The subquery w
 Note that you don't have to include "name" in SELECT clause in this FROM subquery. 
 Once you get the MAX(inf_rate) of year 2015 grouped by each continent, you have to complete the whole queries by matching the max one with the corresponding countries with continent.*/
 
-/* My Solution
+
+/* <My Own Solution>
 
 My guess is the FROM subquery is redundant. So, I just deleted the subquery, then got the max(inf_rate) directly from "economies" table joined to "countries" table 
 by continent. 
