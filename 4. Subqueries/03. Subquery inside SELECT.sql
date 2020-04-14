@@ -6,6 +6,7 @@ Recall that this corresponds to the most populous cities in the world.
 Your task will be to convert the commented out code to get the same result as the code shown.*/
 
 /*INSTRUCTION (1/2)*/
+Just Submit Answer here!
 
 SELECT countries.name AS country, COUNT(*) AS cities_num
   FROM cities
