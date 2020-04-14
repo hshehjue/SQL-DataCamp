@@ -1,6 +1,8 @@
 /*You can also nest multiple subqueries to answer even more specific questions.
 
-In this exercise, for each of the six continents listed in 2015, you'll identify which country had the maximum inflation rate (and how high it was) using multiple subqueries. The table result of your query in Task 3 should look something like the following, where anything between < > will be filled in with appropriate values:
+In this exercise, for each of the six continents listed in 2015, 
+you'll identify which country had the maximum inflation rate (and how high it was) using multiple subqueries. 
+The table result of your query in Task 3 should look something like the following, where anything between < > will be filled in with appropriate values:
 
 +------------+---------------+-------------------+
 | name       | continent     | inflation_rate    |
@@ -13,7 +15,8 @@ In this exercise, for each of the six continents listed in 2015, you'll identify
 | <country6> | Asia          | <max_inflation6>  |
 +------------+---------------+-------------------+
 
-Again, there are multiple ways to get to this solution using only joins, but the focus here is on showing you an introduction into advanced subqueries.*/
+Again, there are multiple ways to get to this solution using only joins, 
+but the focus here is on showing you an introduction into advanced subqueries.*/
 
 
 /*INSTRUCTION (1/3)
@@ -57,7 +60,8 @@ GROUP BY continent;
 
 /*INSTRUCTION (3/3)
 
-* Now it's time to append your second query to your first query using AND and IN to obtain the name of the country, its continent, and the maximum inflation rate for each continent in 2015.
+* Now it's time to append your second query to your first query using AND and IN to obtain the name of the country, 
+  its continent, and the maximum inflation rate for each continent in 2015.
 * For the sake of practice, change all joining conditions to use ON instead of USING.*/
 
 -- Select fields
@@ -87,14 +91,17 @@ SELECT name, continent, inflation_rate
 Among every inflation_rate data, you have to pick up the maximum inflation_rate corresponding to each type of the continent.
 So, before selecting all the required columns, you need to extract "max(inflation_rate)" matched to respect continent 
 by using "GROUP BY."
-While takin this process, you can make a subquery in FROM clause. The subquery will provides you with an arbitrary table from which you can take the MAX(inf_rate) out. 
+While takin this process, you can make a subquery in FROM clause. 
+The subquery will provides you with an arbitrary table from which you can take the MAX(inf_rate) out. 
 Note that you don't have to include "name" in SELECT clause in this FROM subquery. 
-Once you get the MAX(inf_rate) of year 2015 grouped by each continent, you have to complete the whole queries by matching the max one with the corresponding countries with continent.*/
+Once you get the MAX(inf_rate) of year 2015 grouped by each continent, 
+you have to complete the whole queries by matching the max one with the corresponding countries with continent.*/
 
 
 /* <My Own Solution>
 
-My guess is the FROM subquery is redundant. So, I just deleted the subquery, then got the max(inf_rate) directly from "economies" table joined to "countries" table 
+My guess is the FROM subquery is redundant. So, I just deleted the subquery, 
+then got the max(inf_rate) directly from "economies" table joined to "countries" table 
 by continent. 
 The result is as follows below: */
 
