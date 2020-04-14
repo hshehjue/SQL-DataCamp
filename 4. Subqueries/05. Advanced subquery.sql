@@ -86,6 +86,10 @@ SELECT name, continent, inflation_rate
       -- Group by continent
         GROUP BY continent);
 
+
+
+
+
 /* <Explanation on the final queries>
 
 Among every inflation_rate data, you have to pick up the maximum inflation_rate corresponding to each type of the continent.
