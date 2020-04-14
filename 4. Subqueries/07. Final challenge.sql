@@ -36,7 +36,7 @@ ORDER BY name;
 
 
 
-/* My Own Solutions (1/2) */
+/* <My Own Solutions (1/2)> */
 
 SELECT name, total_investment, imports
 FROM countries
@@ -54,7 +54,7 @@ AND code IN (
 ORDER BY name;
 
 
-/* My Own Solutions (2/2) */
+/* <My Own Solutions (2/2)> */
 SELECT distinct name, total_investment, imports
 FROM countries
 INNER JOIN economies
