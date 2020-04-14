@@ -1,24 +1,24 @@
 /* Welcome to the end of the course! 
-The next three exercises will test your knowledge of the content covered IN this course 
-AND apply many of the ideas you've seen to difficult problems. Good luck!
-Read carefully over the INstructions AND solve them step-by-step, 
-thINkINg about how the different clauses work together.
-IN this exercise, you'll need to get the country names AND other 2015 data IN the economies table 
-AND the countries table for Central American countries with an official language. */
+The next three exercises will test your knowledge of the content covered in this course 
+and apply many of the ideas you've seen to difficult problems. Good luck!
+Read carefully over the instructions and solve them step-by-step, 
+thinking about how the different clauses work together.
+In this exercise, you'll need to get the country names and other 2015 data in the economies table 
+and the countries table for Central American countries with an official language. */
 
 
 /* INSTRUCTION
-* SELECT unique country names. Also SELECT the total INvestment AND imports fields.
-* Use a left joIN with countries on the left. (An INNER JOIN would also work, but please use a left joIN here.)
-* Match on code IN the two tables AND use a subquery INside of ON to choose the appropriate languages records.
-* ORDER BY country name ascendINg.
-* Use table aliasINg but not field aliasINg IN this exercise. */
+* Select unique country names. Also select the total investment and imports fields.
+* Use a left join with countries on the left. (An inner join would also work, but please use a left join here.)
+* Match on code in the two tables and use a subquery inside of on to choose the appropriate languages records.
+* Order by country name ascending
+* Use table aliasing but not field aliasing in this exercise. */
 
 -- SELECT fields
-SELECT DISTINCT name, total_INvestment, imports
+SELECT DISTINCT name, total_investment, imports
   -- From table (with alias)
   FROM countries AS c
-    -- JoIN with table (with alias)
+    -- Join with table (with alias)
     LEFT JOIN economies AS e
       -- Match on code
       ON (c.code = e.code
@@ -36,9 +36,9 @@ ORDER BY name;
 
 
 
-/* My Own Solutions (1/2) */
+/* <My Own Solutions (1/2)> */
 
-SELECT name, total_INvestment, imports
+SELECT name, total_investment, imports
 FROM countries
 INNER JOIN economies
 USING (code)
@@ -54,8 +54,8 @@ AND code IN (
 ORDER BY name;
 
 
-/* My Own Solutions (2/2) */
-SELECT distINct name, total_INvestment, imports
+/* <My Own Solutions (2/2)> */
+SELECT distinct name, total_investment, imports
 FROM countries
 INNER JOIN economies
 USING (code)
