@@ -81,3 +81,31 @@ SELECT name, continent, inflation_rate
              WHERE year = 2015) AS subquery
       -- Group by continent
         GROUP BY continent);
+
+/* <Explanation on the final queries>
+
+Among every inflation_rate data, you have to pick up the maximum inflation_rate corresponding to each type of the continent.
+So, before selecting all the required columns, you need to extract "max(inflation_rate)" matched to respect continent 
+by using "GROUP BY."
+While takin this process, you can make a subquery in FROM clause. The subquery will provides you with an arbitrary table from which you can take the MAX(inf_rate) out. 
+Note that you don't have to include "name" in SELECT clause in this FROM subquery. 
+Once you get the MAX(inf_rate) of year 2015 grouped by each continent, you have to complete the whole queries by matching the max one with the corresponding countries with continent.*/
+
+/* My Solution
+
+My guess is the FROM subquery is redundant. So, I just deleted the subquery, then got the max(inf_rate) directly from "economies" table joined to "countries" table 
+by continent. 
+The result is as follows below: */
+
+SELECT name, continent, inflation_rate
+FROM countries
+INNER JOIN economies
+    USING (code)
+WHERE year = 2015
+    AND inflation_rate IN (
+        SELECT MAX(inflation_rate)
+        FROM countries
+        INNER JOIN economies
+            USING (code)
+        WHERE year = 2015
+        GROUP BY continent);
