@@ -39,4 +39,8 @@ university_city text
 
 -- Print the contents of this table
 SELECT * 
+<<<<<<< HEAD
 FROM universities
+=======
+FROM universities
+>>>>>>> 669bcdf5bb92c30a617917b6a6d7564b75faeed0
